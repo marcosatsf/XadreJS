@@ -42,7 +42,7 @@ class Torre extends Peca{
         //(peca.i == i && peca.j == j)
         // Esse é um comportamento de exemplo.
         // <<<<<<<
-        if(tabuleiro.getPeca(i,j) != undefined) if(tabuleiro.getPeca(i,j).tipo == peca.tipo) return false;
+        if(tabuleiro.getPeca(i,j) != undefined) if(tabuleiro.getPeca(i,j).tipo == this.tipo) return false;
         if((super.posJ == j && super.posI != i) || (super.posJ != j && super.posI == i)){ //Andar
             if(super.posJ == j && this.trajetoria(tabuleiro,i,'X',this)) return false;
             else{

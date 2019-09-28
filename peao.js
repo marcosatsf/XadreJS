@@ -8,6 +8,7 @@ class Peao extends Peca{
         //(peca.i == i && peca.j == j)
         // Esse é um comportamento de exemplo.
         // <<<<<<<
+        if(tabuleiro.getPeca(i,j) != undefined) if(tabuleiro.getPeca(i,j).tipo == this.tipo) return false;
         if(super.posJ == j){ //Andar reto
             if(tabuleiro.getRepresentacao()[i][j] == 0)
                 switch(super.tipo){
