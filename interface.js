@@ -12,9 +12,12 @@ function select(i,j) {
 
 	if (select.obj_clicado === undefined || select.obj_clicado === null) {
 		var peca = jogo.getPeca(i, j);
-
-		if (peca == null)
+		if(peca.tipo != jogo.getVez()){
+			jogo.getVez() == 0 ? alert("Vez do jogador Branco!") : alert("Vez do jogador Preto!");
 			return;
+		} 
+
+		if (peca == null) return;
 
 		select.obj_clicado = obj;
 		select.obj_bgcolor = obj.style.backgroundColor;
@@ -24,6 +27,7 @@ function select(i,j) {
 		select.obj_clicado.style.backgroundColor = select.obj_bgcolor;
 		select.obj_clicado = null;
 		atualizar_jogo();
+		jogo.rodaVez();
 	} else {
 		alert("Movimento invalido!");
 		select.obj_clicado.style.backgroundColor = select.obj_bgcolor;
@@ -50,7 +54,7 @@ function reiniciar_jogo() {
 }
 
 function gerar_tabuleiro() {
-	var table = "<table id=\"tabuleiro\">";
+	var table = "<table id=\"tabuleiro\" align=\"center\">";
 	var color = false;
 
 	for (var i = 0; i < 8; i++) {

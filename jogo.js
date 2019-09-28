@@ -1,4 +1,5 @@
 function JogoXadrez() {
+	var vez = 0; //0 para Branca, 1 para Preta
 	// Identificador de cada peça!
 	const W_KING   = 1;  // "&#9812" ♔
 	const W_QUEEN  = 2;  // "&#9813" ♕
@@ -31,6 +32,12 @@ function JogoXadrez() {
 	this.getTabuleiro = function() {
 		// return tabuleiro.getRepresentacao();
 		return tab.getRepresentacao();
+	}
+
+	this.getVez = function(){ return vez; }
+
+	this.rodaVez = function(){
+		vez == 0 ? vez = 1 : vez = 0;
 	}
 
 	// Esse método reinicia o jogo.
