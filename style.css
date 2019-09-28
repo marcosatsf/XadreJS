@@ -1,3 +1,7 @@
+* {
+	text-align: center;
+}
+
 td {
 	width:24pt;
 	height:24pt;
@@ -9,11 +13,12 @@ td {
 }
 
 table {
+	padding: 3px;
 	text-align:center;
-	border-spacing:0pt;
+	border-spacing:5pt;
 	font-family:'Arial Unicode MS';
-	border-collapse:collapse;
+	border-collapse: collapse;
 	border-color: black;
 	border-style: solid;
-	border-width: 1pt 1pt 1pt 1pt;
+	border-width: 3pt 3pt 3pt 3pt;
 }
