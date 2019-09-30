@@ -4,6 +4,11 @@
             this._posI = posI;
             this._posJ = posJ;
             this._id = id;
+            this._morto = 0;//0 para vivo, 1 para morto
+        }
+
+        get morto(){
+            return this._morto;
         }
 
         get tipo(){
@@ -20,6 +25,10 @@
 
         get id(){
             return this._id;
+        }
+
+        set morto(std){
+            this._morto =std;
         }
 
         set posI(i){

@@ -25,7 +25,7 @@ function JogoXadrez() {
 
 	// Esse é um código de exemplo
 	// <<<<<<<
-	var tab = new Tabuleiro();	
+	var tab;
 	// >>>>>>>
 
 	// Esse método retorna um array 8x8 contendo o estado do tabuleiro.
@@ -42,6 +42,7 @@ function JogoXadrez() {
 
 	// Esse método reinicia o jogo.
 	this.reiniciar = function() {
+		tab = new Tabuleiro();
 		for(var i = 0; i < 8; i++) {
 			for(var j = 0; j < 8; j++){
 				var pecaIns;
@@ -111,6 +112,7 @@ function JogoXadrez() {
 		// >>>>>>>
 		return null;
 	}
+
 
 	// Esse método move a peça para a posição i, j do tabuleiro.
 	// Se o movimento não for possível, esse método deve retornar false. Caso contrário, deve retornar true;

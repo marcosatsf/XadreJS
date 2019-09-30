@@ -33,4 +33,15 @@ class Tabuleiro{
     getRepresentacao(){
         return this._tabuleiro;
     }
+
+    check(i,j){
+        if(this._tabuleiro[i][j] != 0){
+            this._tabuleiroPeca[i][j].morto = 1;
+            if(this._tabuleiro[i][j] == 1) return 2;
+            if(this._tabuleiro[i][j] == 7) return 1;
+        }
+        return 0;
+    }
+
+
 }
