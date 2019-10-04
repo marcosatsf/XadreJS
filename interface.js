@@ -1,6 +1,7 @@
 var jogo = new JogoXadrez();
 
 function init() {
+	document.write("<table align=\"center\"><th><div id=\"anim\"><h2>Bem-Vindo<br>ao<br>XadrezJS</h2><h4>by MarcosATSF</h4></div></th></table>");
 	gerar_tabuleiro();
 	jogo.reiniciar();
 	atualizar_jogo();

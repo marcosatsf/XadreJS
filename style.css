@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 * {
 	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 td {
@@ -12,8 +15,18 @@ td {
 	font-size:150%;
 }
 
-table {
-	padding: 3px;
+
+@keyframes slideInFromLeft {
+    0%,90% {
+      transform: translateX(-1000%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+#tabuleiro {
+	padding: 20px;
 	text-align:center;
 	border-spacing:5pt;
 	font-family:'Arial Unicode MS';
@@ -21,4 +34,83 @@ table {
 	border-color: black;
 	border-style: solid;
 	border-width: 3pt 3pt 3pt 3pt;
+	animation: 9s ease-out 0s 1 slideInFromLeft;
 }
+
+@keyframes intro {
+	0%,100%   {transform: translateX(0);
+		background-color:white;
+      color:white; 
+      left:0px; 
+      top:0px;
+      text-shadow:
+        3px 3px 0 white,
+      -1px -1px 0 white,  
+       1px -1px 0 white,
+       -1px 1px 0 white,
+		1px 1px 0 white;}
+	30%,70%  {background-color:white;text-shadow:
+		3px 3px 0 white,
+		-1px -1px 0 white,  
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;color: white; left:200px; top:50px;width:200px;height:200px;}
+    35%,65%  {background-color:rgb(114, 0, 0);text-shadow:
+        3px 3px 0 rgb(114, 0, 0),
+      -1px -1px 0 rgb(114, 0, 0),  
+       1px -1px 0 rgb(114, 0, 0),
+       -1px 1px 0 rgb(114, 0, 0),
+        1px 1px 0 rgb(114, 0, 0);color: rgb(114, 0, 0); left:200px; top:50px;width:200px;height:200px;}
+    38%,62% {
+        background-color:rgb(114, 0, 0);
+        color: white;
+        border-radius: 20px;
+        border: 10px solid rgb(235, 2, 2);
+        box-shadow: 5px 5px 6px rgba(black, 0.15);
+        left:200px; top:50px;
+        width:200px;
+        height:200px;
+        text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+    }
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes intro {
+    0%,100%   {background-color:white; left:0px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+  }  
+
+/* The element to apply the animation to */
+#anim {
+	text-align:center;
+    z-index: -1;
+    width: 25px;
+    height: 25px;
+	background-color: rgb(255, 255, 255);
+    color:white;
+    animation-name: intro;
+	animation-duration: 9s;
+	transform: translateX(-1000%);
+}
+
+#menu {
+    animation: 9s ease-out 0s 1 slideInFromLeft;
+}
+
+/*
+div {
+	text-align:center;
+    z-index: -1;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    color:white;
+    animation-name: intro;
+    animation-duration: 8s;
+}*/
+
