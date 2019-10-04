@@ -30,18 +30,18 @@ class Tabuleiro{
         return this._tabuleiro[i][j];
     }
 
+    getPbP(peca){
+        for(var i = 0; i < 8; i++) {
+            for(var j = 0; j < 8; j++){
+                if(this._tabuleiroPeca[i][j] != undefined)
+                    if(this._tabuleiroPeca[i][j].id == peca.id && this._tabuleiroPeca[i][j].tipo == peca.tipo) return false;
+            }
+        }
+        return true;
+    }
+
     getRepresentacao(){
         return this._tabuleiro;
     }
-
-    check(i,j){
-        if(this._tabuleiro[i][j] != 0){
-            this._tabuleiroPeca[i][j].morto = 1;
-            if(this._tabuleiro[i][j] == 1) return 2;
-            if(this._tabuleiro[i][j] == 7) return 1;
-        }
-        return 0;
-    }
-
 
 }

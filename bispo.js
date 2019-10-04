@@ -31,6 +31,7 @@ class Bispo extends Peca{
                 }
             break;
             case 'SE':
+                distant*=-1;
                 while(distant > 1){
                     xAt++;
                     yAt++;
@@ -39,6 +40,7 @@ class Bispo extends Peca{
                 }
             break;
             case 'SO':
+                    distant*=-1;
                 while(distant > 1){
                     xAt++;
                     yAt--;
@@ -54,7 +56,6 @@ class Bispo extends Peca{
         if(tabuleiro.getPeca(i,j) != undefined) if(tabuleiro.getPeca(i,j).tipo == this.tipo) return false;
         if(Math.abs(super.posJ-j) == Math.abs(super.posI-i)){ //Andar
             if(Math.abs(super.posJ-j) == Math.abs(super.posI-i) && this.trajetoria(tabuleiro,i,j,this)) return false;
-            this._movInit = 0;
             tabuleiro.rmPeca(super.posI,super.posJ);
             super.posI = i;
             super.posJ = j;

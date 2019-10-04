@@ -27,12 +27,6 @@ function select(i,j) {
 		select.obj_clicado.style.backgroundColor = select.obj_bgcolor;
 		select.obj_clicado = null;
 		atualizar_jogo();
-		switch(jogo.moverPeca(select.peca, i, j)){
-			case 1: alert("Jogador Preto venceu!");
-			break;
-			case 2: alert("Jogador Branco venceu!");
-			break;
-		}
 		jogo.rodaVez();
 	} else {
 		alert("Movimento invalido!");
@@ -52,7 +46,15 @@ function atualizar_jogo() {
 			obj.innerHTML = pecas[tabData[i][j]];
 		}
 	}
-	jogo.verificaFinal();
+	
+	switch(jogo.verificaEstados()){
+		case 1: alert("Jogador Preto venceu!");
+		setTimeout(reiniciar_jogo(),3000);
+		break;
+		case 2: alert("Jogador Branco venceu!");
+		setTimeout(reiniciar_jogo(),3000);
+		break;
+	}
 }
 
 function reiniciar_jogo() {

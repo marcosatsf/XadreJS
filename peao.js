@@ -1,3 +1,6 @@
+const B_QUEEN  = 8;  // "&#9819" ♛
+const W_QUEEN  = 2;  // "&#9813" ♕
+
 class Peao extends Peca{
     constructor(tipo,posI,posJ,id){
         super(tipo, posI, posJ, id);
@@ -18,7 +21,8 @@ class Peao extends Peca{
                             tabuleiro.rmPeca(super.posI,super.posJ);
                             super.posI = i;
                             super.posJ = j;
-                            tabuleiro.addPeca(this);
+                            if(i == 0) tabuleiro.addPeca(new Rainha(0,i,j,W_QUEEN));
+                            else tabuleiro.addPeca(this);
                             return true;
                         }
                         if(super.posI - 2 == i && this._movInit == 1){
@@ -36,7 +40,8 @@ class Peao extends Peca{
                             tabuleiro.rmPeca(super.posI,super.posJ);
                             super.posI = i;
                             super.posJ = j;
-                            tabuleiro.addPeca(this);
+                            if(i == 7) tabuleiro.addPeca(new Rainha(1,i,j,B_QUEEN));
+                            else tabuleiro.addPeca(this);
                             return true;
                         }
                         if(super.posI + 2 == i && this._movInit == 1){
@@ -58,7 +63,8 @@ class Peao extends Peca{
                         tabuleiro.rmPeca(super.posI,super.posJ);
                         super.posI = i;
                         super.posJ = j;
-                        tabuleiro.addPeca(this);
+                        if(i == 0) tabuleiro.addPeca(new Rainha(0,i,j,W_QUEEN));
+                            else tabuleiro.addPeca(this);
                         return true;
                     }
                 break;
@@ -68,7 +74,8 @@ class Peao extends Peca{
                         tabuleiro.rmPeca(super.posI,super.posJ);
                         super.posI = i;
                         super.posJ = j;
-                        tabuleiro.addPeca(this);
+                        if(i == 7) tabuleiro.addPeca(new Rainha(1,i,j,B_QUEEN));
+                            else tabuleiro.addPeca(this);
                         return true;
                     }
                 break;

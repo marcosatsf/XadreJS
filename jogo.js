@@ -91,6 +91,10 @@ function JogoXadrez() {
 		}
 	}
 
+	this.verificaEstados = function(){
+		if(tab.getPbP({id : B_KING,tipo : 1})) return 2;
+		if(tab.getPbP({id : W_KING,tipo : 0})) return 1;
+	}
 	// Esse método retorna uma referência para o objeto peça que está na posição i,j do tabuleiro.
 	// Se a posição não tiver uma peça pertencente ao jogador atual, esse método deve retornar null;
 	this.getPecaId = function(i, j) {
@@ -129,13 +133,5 @@ function JogoXadrez() {
 
 		if(peca.mover(tab,i,j)) return true;
 		return false;
-		// Esse é um comportamento de exemplo.
-		// <<<<<<<
-		tabuleiro[peca.i][peca.j] = 0;
-		tabuleiro[i][j] = peca.id;
-		peca.i = i;
-		peca.j = j;
-		// >>>>>>>
-		return true;
 	}
 }

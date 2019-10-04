@@ -61,6 +61,7 @@ class Rainha extends Peca{
                 }
             break;
             case 'SE':
+                    distant*=-1;
                 while(distant > 1){
                     xAt++;
                     yAt++;
@@ -69,6 +70,7 @@ class Rainha extends Peca{
                 }
             break;
             case 'SO':
+                    distant*=-1;
                 while(distant > 1){
                     xAt++;
                     yAt--;
@@ -89,7 +91,6 @@ class Rainha extends Peca{
             if(super.posJ == j && this.trajetoria(tabuleiro,i,-1,'X',this)) return false;
             else if(super.posI == i && this.trajetoria(tabuleiro,j,-1,'Y',this)) return false;
             else if(Math.abs(super.posJ-j) == Math.abs(super.posI-i) && this.trajetoria(tabuleiro,i,j,'XY',this)) return false;
-            this._movInit = 0;
             tabuleiro.rmPeca(super.posI,super.posJ);
             super.posI = i;
             super.posJ = j;

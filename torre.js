@@ -48,7 +48,6 @@ class Torre extends Peca{
             else{
                 if(this.trajetoria(tabuleiro,j,'Y',this)) return false;
             }
-            this._movInit = 0;
             tabuleiro.rmPeca(super.posI,super.posJ);
             super.posI = i;
             super.posJ = j;

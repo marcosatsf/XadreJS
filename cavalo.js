@@ -10,7 +10,6 @@ class Cavalo extends Peca{
         (super.posI+1 == i && (super.posJ+2==j || super.posJ-2==j)) || 
         (super.posI+2 == i && (super.posJ+1==j || super.posJ-1==j))
         ){ //Andar
-            this._movInit = 0;
             tabuleiro.rmPeca(super.posI,super.posJ);
             super.posI = i;
             super.posJ = j;
