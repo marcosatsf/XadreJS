@@ -55,7 +55,7 @@ class Bispo extends Peca{
     mover(tabuleiro, i, j){
         if(tabuleiro.getPeca(i,j) != undefined) if(tabuleiro.getPeca(i,j).tipo == this.tipo) return false;
         if(Math.abs(super.posJ-j) == Math.abs(super.posI-i)){ //Andar
-            if(Math.abs(super.posJ-j) == Math.abs(super.posI-i) && this.trajetoria(tabuleiro,i,j,this)) return false;
+            if(this.trajetoria(tabuleiro,i,j,this)) return false;
             tabuleiro.rmPeca(super.posI,super.posJ);
             super.posI = i;
             super.posJ = j;
