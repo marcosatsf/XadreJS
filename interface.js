@@ -7,6 +7,11 @@ function init() {
 	atualizar_jogo();
 }
 
+(function titleMarquee() {
+    document.title = document.title.substring(1)+document.title.substring(0,1);
+    setTimeout(titleMarquee, 200);
+})();
+
 function select(i,j) {
 	var tabuleiro = document.getElementById('tabuleiro');
 	var obj = tabuleiro.rows[i].cells[j];
@@ -44,7 +49,7 @@ function atualizar_jogo() {
 	for (var i = 0, n = tabuleiro.rows.length; i < n; i++) {
 		for (var j = 0, m = tabuleiro.rows[i].cells.length; j < m; j++) {
 			obj = tabuleiro.rows[i].cells[j];
-			obj.innerHTML = pecas[tabData[i][j]];
+			obj.innerHTML = pecas[tabData[i][j]]; 
 		}
 	}
 	
@@ -71,9 +76,9 @@ function gerar_tabuleiro() {
 		table += "<tr>";
 		for (var j = 0; j < 8; j++) {
 			if (color) {
-				table += "<td id=\"i" + i + "j" + j + "\" bgcolor=\"silver\" onclick=\"select(" + i + "," + j + ");\"></td>";
+				table += "<td id=\"i" + i + "j" + j + "\" class=\"bgBlack\" onclick=\"select(" + i + "," + j + ");\"></td>";//bgcolor=\"silver\"
 			} else {
-				table += "<td id=\"i" + i + "j" + j + "\" bgcolor=\"white\" onclick=\"select(" + i + "," + j + ");\"></td>";
+				table += "<td id=\"i" + i + "j" + j + "\" class=\"bgWhite\" onclick=\"select(" + i + "," + j + ");\"></td>";//bgcolor=\"white\"
 			}
 
 			color = !color;

@@ -2,17 +2,102 @@
 
 * {
 	text-align: center;
-	font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.bgWhite {
+  background-image: url("src/img/marmoreB.jpg");
+  background-size: 48pt 48pt;
+}
+
+.bgBlack {
+  background-image: url("src/img/marmoreP.jpg");
+  background-size: 48pt 48pt;
+}
+
+button {
+  border-spacing: 10px;
+  width: 130px;
+  height: 50px;
+  border: 5px solid rgb(0, 0, 0);
+  background-color: rgb(254, 255, 210);
+  margin: 5px;
+  border-radius: 10px;
+  animation: 0.75s ease-in-out 0s buttonAnimOut;
+}
+
+button:hover{
+  animation: 0.75s ease-in-out 0s buttonAnimIn;
+  border: 10px solid rgb(255, 229, 158);
+  background-image: linear-gradient(-90deg, rgb(254, 255, 210), rgb(209, 153, 0));
+  border-radius: 20px;
+}
+/*
+animation-duration: 0.5s;
+  animation-name: buttonAnim;
+  animation-iteration-count: 1;
+  border: 10px solid rgb(255, 229, 158);
+    background-image: linear-gradient(-90deg, rgb(254, 255, 210), rgb(209, 153, 0));
+*/
+@keyframes buttonAnimIn {
+  0% {
+    border: 5px solid rgb(0, 0, 0);
+    background-image: linear-gradient(90deg, rgb(254, 255, 210), rgb(209, 153, 0));
+    border-radius: 10px;
+  }
+  20%{
+    background-image: linear-gradient(60deg, rgb(254, 255, 210), rgb(209, 153, 0));
+  }
+  40%{
+    background-image: linear-gradient(30deg, rgb(254, 255, 210), rgb(209, 153, 0));
+  }
+  60%{
+    background-image: linear-gradient(-30deg, rgb(254, 255, 210), rgb(209, 153, 0));
+  }
+  80%{
+    background-image: linear-gradient(-60deg, rgb(254, 255, 210), rgb(209, 153, 0));
+  }
+  100% {
+    border: 10px solid rgb(255, 229, 158);
+    background-image: linear-gradient(-90deg, rgb(254, 255, 210), rgb(209, 153, 0));
+    border-radius: 20px;
+  }
+}
+
+@keyframes buttonAnimOut {
+  0% {
+    border: 10px solid rgb(255, 229, 158);
+    background-image: linear-gradient(-90deg, rgb(254, 255, 210), rgb(209, 153, 0));
+    border-radius: 20px;
+  }
+  20%{
+    background-image: linear-gradient(-60deg, rgb(254, 255, 210), rgb(209, 153, 0));
+  }
+  40%{
+    background-image: linear-gradient(-30deg, rgb(254, 255, 210), rgb(209, 153, 0));
+  }
+  60%{
+    background-image: linear-gradient(30deg, rgb(254, 255, 210), rgb(209, 153, 0));
+  }
+  80%{
+    background-image: linear-gradient(60deg, rgb(254, 255, 210), rgb(209, 153, 0));
+  }
+  100% {
+    border: 5px solid rgb(0, 0, 0);
+    background-image: linear-gradient(90deg, rgb(254, 255, 210), rgb(209, 153, 0));
+    border-radius: 10px;
+  }
 }
 
 td {
-	width:24pt;
-	height:24pt;
+	width:48pt;
+	height:48pt;
 	border-collapse:collapse;
 	border-color: black;
 	border-style: solid;
 	border-width: 1pt 0pt 0pt 1pt;
-	font-size:150%;
+  font-size:250%;
+  text-shadow: -1px 0 rgb(255, 241, 203), 0 1px rgb(255, 241, 203), 1px 0 rgb(255, 241, 203), 0 -1px rgb(255, 241, 203);
 }
 
 
@@ -38,7 +123,7 @@ td {
 }
 
 @keyframes intro {
-	0%,100%   {transform: translateX(0);
+	0%,100%   {transform: translateX(0%);
 		background-color:white;
       color:white; 
       left:0px; 
@@ -95,7 +180,7 @@ td {
     color:white;
     animation-name: intro;
 	animation-duration: 9s;
-	transform: translateX(-1000%);
+	transform: translateX(-5000%);
 }
 
 #menu {
